@@ -8,7 +8,10 @@ def open_image_dialog():
     root.withdraw()  # Hide the root window
 
     # Open the file dialog
-    file_path = filedialog.askopenfilename(filetypes=[("Image files", "*.png;")])
+    print("Select a template image")
+    file_path = filedialog.askopenfilename(
+        title="Select a template image", 
+        filetypes=[("Image files", "*.png;")])
 
     # Close the Tkinter root window
     root.destroy()
@@ -22,7 +25,9 @@ def open_mp4_dialog():
     root.withdraw()  # Hide the root window
 
     # Open the file dialog
+    print("Select a Brawlhalla 1v1 Ranked VOD")
     file_path = filedialog.askopenfilename(
+        title="Select a Brawlhalla 1v1 Ranked VOD", 
         filetypes=[("MP4 files", "*.mp4")]
     )
 
