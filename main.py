@@ -1,6 +1,7 @@
 # env: opencv39
 from modules.crop_image import crop_image
 from modules.load_images_from_folder import load_images_from_folder, get_image_paths
+from modules.convert import seconds_to_hms
 from PIL import Image
 import PIL
 import sys
@@ -21,15 +22,11 @@ TEMPLATE_IMG_PATH = open_image_dialog()
 TEMPLATE_IMG = Image.open(TEMPLATE_IMG_PATH)
 TEMPLATE_VIDEO = open_mp4_dialog()
 MINIMUM_ACCURACY = 0.90
-FRAME_SKIP = 210
-video_name = os.path.basename(TEMPLATE_VIDEO)
-SAVE_LOC = f"./results/{video_name[:-4]}/"
+FRAME_SKIP = int(input("Enter FRAME_SKIP value (if you don't know what this is enter 210): ")) # 210 results in duplicates rarely
+VIDEO_NAME = os.path.basename(TEMPLATE_VIDEO)
+SAVE_LOC = f"./results/{VIDEO_NAME[:-4]}/"
+timestamps = []
 
-
-def seconds_to_hms(seconds):
-    hours, remainder = divmod(seconds, 3600)
-    minutes, remaining_seconds = divmod(remainder, 60)
-    return int(hours), int(minutes), int(remaining_seconds)
 
 # try to create save folder
 try:
@@ -39,13 +36,11 @@ except OSError:
     print('Error: Creating directory of data')
 
 # variables
-
 cam = cv2.VideoCapture(TEMPLATE_VIDEO) # Load Video
 total_frames = int(cam.get(cv2.CAP_PROP_FRAME_COUNT))
-
 currentframe = 0
 
-
+# inspect video
 while (True):
 
     # read next frame
@@ -80,12 +75,17 @@ while (True):
             # save img
             seconds = currentframe*0.0333333333333333333
             hours, minutes, seconds = seconds_to_hms(seconds)
-
+            timestamps.append(f"{hours}:{minutes}:{seconds} ")
             file_name = f"{SAVE_LOC}time_{hours}_{minutes}_{seconds}.jpg"
             cv2.imwrite(file_name, frame)
 
     currentframe+=1
 
+# create txt file
+with open(f"{SAVE_LOC}{VIDEO_NAME}.txt", "w") as file:
+    # Write the content to the file
+    for string in timestamps:
+        file.write(string + "\n")
 
 # Release all space and windows once done
 cam.release()
