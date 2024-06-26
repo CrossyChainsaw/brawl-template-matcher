@@ -21,7 +21,7 @@ print("PIL: " + PIL.__version__)      # 9.5.0  / 10.3.0
 TEMPLATE_IMG_PATH = open_image_dialog()
 TEMPLATE_IMG = Image.open(TEMPLATE_IMG_PATH)
 TEMPLATE_VIDEO = open_mp4_dialog()
-MINIMUM_ACCURACY = 0.90
+MINIMUM_ACCURACY = float(input("Enter MINIMUM_ACCURACY value (if you don't know what this is enter 0.90): ")) # 0.90 works decently
 FRAME_SKIP = int(input("Enter FRAME_SKIP value (if you don't know what this is enter 210): ")) # 210 results in duplicates rarely
 VIDEO_NAME = os.path.basename(TEMPLATE_VIDEO)
 SAVE_LOC = f"./results/{VIDEO_NAME[:-4]}/"
