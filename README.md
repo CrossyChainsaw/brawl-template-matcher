@@ -7,6 +7,14 @@ When you run the application you are asked to fill in 4 variables. Here is an ex
 
 <br>
 
+# Quick Use
+1. Select Template Image
+2. Select .mp4 File
+3. Enter 0.85
+4. Enter 250
+
+<br>
+
 # Choosing a Template Image
 This is the most tricky part but don't worry.
 ## What is a Template Image?
