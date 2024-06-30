@@ -19,7 +19,7 @@ the application will take a screenshot of every frame it sees with this image in
 ![image](https://github.com/CrossyChainsaw/brawl-template-matcher/assets/74303221/531a5915-859f-4b96-a45e-1a9cafbc3781)
 
 
-## How to generate a Template Image?
+## How to generate a (good) Template Image?
 To generate a Template Image you want to make the application generate frames for you. After, you crop the screenshot to whatever you want to use as a template image. Here is an example.
 
 1. Choose a random template image (doesn't matter we will put minimum accuracy at 0)
@@ -36,7 +36,7 @@ Just choose any .mp4 file with gameplay. Based of the template image you can dec
 <br>
 
 # Entering the Minimum Accuracy
-The accuracy means how well the template image fits in the video frame. If you have a good template image you can put this at 0.95. If you don't have a good image you can try 0.85. If you don't seem to get any values above 0.6 accuracy, your template image is most likely bad. Read [Choosing a Template Image]() to generate a good template image.
+The accuracy means how well the template image fits in the video frame. If you have a good template image you can put this at 0.95. If you don't have a good image you can try 0.85. If you don't seem to get any values above 0.6 accuracy, your template image is most likely bad. Read [How to generate a (good) Template Image?](#how-to-generate-a-good-template-image) to generate a good template image.
 
 <br>
 
