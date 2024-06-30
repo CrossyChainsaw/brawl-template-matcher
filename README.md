@@ -1,9 +1,11 @@
-## How to use
+# How to use
 When you run the application you are asked to fill in 4 variables. Here is an explanation for each one of them
 - [Choosing a Template Image](#choosing-a-template-image)
 - [Choosing a Brawl VOD](#choosing-a-brawl-vod)
 - [Entering the Minimum Accuracy](#entering-the-minimum-accuracy)
 - [Entering the Frame Skip Value](#entering-the-frame-skip-value)
+
+<br>
 
 # Choosing a Template Image
 This is the most tricky part but don't worry.
@@ -26,11 +28,17 @@ To generate a Template Image you want to make the application generate frames fo
 4. You can put the frame skip at any value. Safest move is to put it at 1, which will result in all the frames getting rendered. You can also put it at 2 or 3 it it isnt frame perfect or even values like 250.
 5. The application will render frames into the results folder. if you see your desired frame you can stop the application and open the image in paint, crop it so you have the template image, and save as .png.
 
+<br>
+
 # Choosing a Brawl VOD
 Just choose any .mp4 file with gameplay. Based of the template image you can decide which frames you want to extract.
 
+<br>
+
 # Entering the Minimum Accuracy
 The accuracy means how well the template image fits in the video frame. If you have a good template image you can put this at 0.95. If you don't have a good image you can try 0.85. If you don't seem to get any values above 0.6 accuracy, your template image is most likely bad. Read [Choosing a Template Image]() to generate a good template image.
+
+<br>
 
 # Entering the Frame Skip Value
 When this is set to 1, the application will check each frame of the video and try to match the template image in the video, outputting an accuracy based of how well the template image fits in the video frame. Usually (If you are extracting matchmaking frames from ranked gameplay) you want to put this value around 250. Having a value of 250 makes sure you won't get duplicate frames of the same matchmaking frame / same opponent. 
