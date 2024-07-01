@@ -21,8 +21,8 @@ print("PIL: " + PIL.__version__)      # 9.5.0  / 10.3.0
 TEMPLATE_IMG_PATH = open_image_dialog()
 TEMPLATE_IMG = Image.open(TEMPLATE_IMG_PATH)
 TEMPLATE_VIDEO = open_mp4_dialog()
-MINIMUM_ACCURACY = float(input("Enter MINIMUM_ACCURACY value (if you don't know what this is enter 0.90): ")) # 0.90 works decently
-FRAME_SKIP = int(input("Enter FRAME_SKIP value (if you don't know what this is enter 210): ")) # 210 results in duplicates rarely
+MINIMUM_ACCURACY = float(input("Enter MINIMUM_ACCURACY value (if you don't know what this is enter 0.85): ")) # 0.90 works decently
+FRAME_SKIP = int(input("Enter FRAME_SKIP value (if you don't know what this is enter 250): ")) # 250 results in duplicates rarely
 VIDEO_NAME = os.path.basename(TEMPLATE_VIDEO)
 SAVE_LOC = f"./results/{VIDEO_NAME[:-4]}/"
 timestamps = []
@@ -67,6 +67,9 @@ while (True):
         # break down the results
         min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
         
+        # Round accuracy down to 2 decimals
+        max_val = round(max_val, 2)
+
         # print the frame
         print(f"frame {currentframe}/{total_frames}: {max_val}")
         
