@@ -21,17 +21,17 @@ When you run the application you are asked to fill in 4 variables. Here is an ex
 # Choosing a Template Image
 This is the most tricky part but don't worry.
 ## What is a Template Image?
-A template image is an image the application will try to fit in each frame of the video. The application will output an accuracy of how well the template image fits into the video frame, and then goes onto the next frame. By providing the template image, you are telling the application what to look for in the video. If i give this image,
+A template image is an image the application will try to fit in each frame of the video. The application will output an accuracy of how well the template image fits into the video frame, and then goes onto the next frame. By providing the template image, you are telling the application: "Look for this image in the video",
 
 ![template image 1v1 ranked season 32e](https://github.com/CrossyChainsaw/brawl-template-matcher/assets/74303221/6ae87203-0f0b-4c69-90cc-19ef1b999758)
 
-the application will take a screenshot of every frame it sees with this image inside of it. If you have a bad image, the application will not work properly and output low accuracies.
+the application will take a screenshot of every frame it sees with this image inside of it. If you have a bad image, the application will not work properly and output low accuracies. Below is an example of the output of the application. The application looks for the template image, and made 4 screenshots of the video where the template image appeared.
 
 ![image](https://github.com/CrossyChainsaw/brawl-template-matcher/assets/74303221/531a5915-859f-4b96-a45e-1a9cafbc3781)
 
 
-## How to generate a (good) Template Image?
-To generate a Template Image you want to make the application generate frames for you. After, you crop the screenshot to whatever you want to use as a template image. Here is an example.
+## How to get a (good) Template Image?
+The best and easiest way to get a good template image is to make the application extract the video frames for you. After the application has extracted the frame that includes your desired template image, you can simply crop out the template image. Below is an example of how to put this to practise.
 
 1. Choose a random template image (doesn't matter we will put minimum accuracy at 0)
 2. Choose the .mp4 file which of you want to render frames.
@@ -47,7 +47,7 @@ Just choose any .mp4 file with gameplay. Based of the template image you can dec
 <br>
 
 # Entering the Minimum Accuracy
-The accuracy means how well the template image fits in the video frame. If you have a good template image you can put this at 0.95. If you don't have a good image you can try 0.85. If you don't seem to get any values above 0.6 accuracy, your template image is most likely bad. Read [How to generate a (good) Template Image?](#how-to-generate-a-good-template-image) to generate a good template image.
+The accuracy means how well the template image fits in the video frame. If you have a good template image you can put this at 0.95. If you don't have a good image you can try 0.85. If you don't seem to get any values above 0.6 accuracy, your template image is most likely bad. Read [How to get a (good) Template Image?](#how-to-get-a-good-template-image) to generate a good template image.
 
 <br>
 
