@@ -1,5 +1,5 @@
 # What is brawl-template-matcher?
-brawl-template-matcher is a program to extract your desired frames from a video. I used this a lot to extract matchmaking frames from a Brawlhalla Ranked VOD.
+brawl-template-matcher is a program that can extract desired frames from a video. I mainly used this to extract matchmaking frames from Brawlhalla Ranked VODs. By collecting matchmaking frames automatically, I was able to see which players I played against in a certain VOD.
 
 # How to use
 When you run the application you are asked to fill in 4 variables. Here is an explanation for each one of them
